@@ -3,15 +3,17 @@ import os
 
 import dotenv
 from telegram import InlineQueryResultArticle, InputTextMessageContent
-from telegram.error import BadRequest, ChatMigrated, NetworkError, TelegramError, TimedOut, Unauthorized
-from telegram.ext import CommandHandler, Filters, InlineQueryHandler, MessageHandler, Updater
+from telegram.error import (BadRequest, ChatMigrated, NetworkError,
+                            TelegramError, TimedOut, Unauthorized)
+from telegram.ext import (CommandHandler, Filters, InlineQueryHandler,
+                          MessageHandler, Updater)
 
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 dotenv.load_dotenv()
 token = os.getenv("TOKEN")
 
-updater = Updater(token=token, use_context=True)
+updater = Updater(token=token)
 
 
 def start(update, context):
