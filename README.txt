@@ -5,3 +5,6 @@ if len(info) > 4096:
         bot.send_message(message.chat.id, info[x:x+4096])
 else:
     bot.send_message(message.chat.id, info)
+
+
+--> It uses apscheduler which conflicts with uvicorn --reload
